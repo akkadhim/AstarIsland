@@ -3,14 +3,14 @@ Training script: fetch GT from all completed rounds, run comprehensive calibrati
 Run this between rounds to improve params for the next round.
 """
 
-import json, time, dataclasses, traceback
+import json, time, dataclasses, traceback, os
 import numpy as np
 from pathlib import Path
 import requests
 import torch
 from scipy.optimize import differential_evolution
 
-TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyZjM5NTgwYy05YjRkLTQ3ODEtOGM0Yy04YmI4Y2Y3Y2IwOWIiLCJlbWFpbCI6ImFobWVkLmsua2FkaGltQHVpYS5ubyIsImlzX2FkbWluIjpmYWxzZSwiZXhwIjoxNzc0NTExMDU0fQ.WnaB9Tkh4IC8-oA8WmiB8M1gmvlX-iv1kZYu48Ef-qg"
+TOKEN = os.environ.get("ASTAR_TOKEN", "")
 
 CKPT_DIR = Path("/workspace/checkpoints")
 TRAIN_DIR = CKPT_DIR / "training_data"

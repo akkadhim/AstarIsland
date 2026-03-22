@@ -16,7 +16,7 @@ from prediction import (build_learned_prior, blend_predictions,
 from parameter_estimation import observed_probs_from_counts
 from multi_gpu import run_sequential_multi_gpu
 
-TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyZjM5NTgwYy05YjRkLTQ3ODEtOGM0Yy04YmI4Y2Y3Y2IwOWIiLCJlbWFpbCI6ImFobWVkLmsua2FkaGltQHVpYS5ubyIsImlzX2FkbWluIjpmYWxzZSwiZXhwIjoxNzc0NTExMDU0fQ.WnaB9Tkh4IC8-oA8WmiB8M1gmvlX-iv1kZYu48Ef-qg"
+TOKEN = os.environ.get("ASTAR_TOKEN", "")
 
 POLL_INTERVAL  = 20     # seconds between round polls
 SCORING_POLL   = 40     # seconds between scoring checks
