@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Model checkpoints and generated data
+checkpoints/*.pt
+checkpoints/*.npy
+checkpoints/*.pkl
+checkpoints/*.json
+checkpoints/training_data/
+
+# Prediction outputs
+checkpoints/pred_*.npy
+checkpoints/prediction_*.npy
+
+# Logs
+*.log
+
+# PDFs (reference documents, not code)
+*.pdf
+
+# Runtime files
+SUBMIT_NOW
+autopilot_status.json
+
+# Data directories
+mnt/
+
+# IDE / editor
+.devcontainer/
+.claude/
+.vscode/
+
+# Hidden helper scripts (contain credentials)
+.round11_submitter.py
+.round11_resubmitter.py
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Credential notes - IMPORTANT:
+# watcher.py and train.py contain a hardcoded JWT TOKEN.
+# Before pushing to a PUBLIC repo, move the token to an
+# environment variable or .env file (which is also gitignored).
+# The token is: TOKEN = "eyJ..." in watcher.py line 19 and train.py
